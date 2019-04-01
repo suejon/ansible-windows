@@ -1,6 +1,6 @@
 ---
 - name: setup ad users
-- hosts: windows
+  hosts: windows
   vars_files:
     - ./ad_user_vars.yml
   roles:
