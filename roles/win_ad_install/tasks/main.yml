@@ -9,9 +9,11 @@
   win_domain:
     dns_domain_name: "{{ssh_host}}"
     safe_mode_password: "{{ansible_password}}"
-  
-- name: reboot after setting up AD controller
+
+- name: reboot machine  
   win_reboot:
+    reboot_timeout: "600"
+    
 
 - name: list domain list after reboot
   dclist: "{{ ad_domain_name }}"
