@@ -22,7 +22,6 @@
 
 - name: show domain list
   debug:
-    msg: "{{item}}"
-  with_items: "{{output}}"
+    msg: "{{output.stderr}}"
   tags:
     - ready

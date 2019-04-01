@@ -1,0 +1,7 @@
+---
+# tasks file for win_service_config
+- name: install chocolatey
+  win_chocolatey:
+    name: "chocolatey"
+    state: downgrade
+    version: 0.10.11
