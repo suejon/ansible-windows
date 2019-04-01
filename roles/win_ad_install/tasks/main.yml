@@ -21,7 +21,8 @@
     - ready 
 
 - name: show domain list
-  win_shell: echo {{item}}
-  with_items: output
+  debug:
+    msg: "{{item}}"
+  with_items: {{output}}
   tags:
     - ready
