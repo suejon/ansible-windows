@@ -17,7 +17,11 @@
 - name: list domain list after reboot
   win_shell: nltest /dclist:{{ ad_domain_name }}
   register: output
+  tags:
+    - ready 
 
 - name: show domain list
   win_shell: echo {{item}}
   with_items: output
+  tags:
+    - ready
