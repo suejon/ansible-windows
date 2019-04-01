@@ -1,0 +1,11 @@
+---
+# tasks file for win_ad_user
+- name: add users to AD
+  win_domain_user:
+    name: "{{item.name}}"
+    firstname: "{{item.firstname}}"
+    surname: "{{item.surname}}"
+    password: "{{item.password}}"
+    state: present
+    groups: "{{item.group_name}}"
+  loop: "{{user_info}}"
