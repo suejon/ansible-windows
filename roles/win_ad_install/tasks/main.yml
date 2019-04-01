@@ -15,5 +15,9 @@
     reboot_timeout: "1200"
 
 - name: list domain list after reboot
-  win_shell: echo "{{ ad_domain_name }}"
+  win_shell: nltest /dclist:{{ ad_domain_name }}
   register: output
+
+- name: show domain list
+  win_shell: echo {{item}}
+  with_items: output
