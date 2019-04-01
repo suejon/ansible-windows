@@ -23,6 +23,6 @@
 - name: show domain list
   debug:
     msg: "{{item}}"
-  with_items: {{output}}
+  with_items: "{{output}}"
   tags:
     - ready
