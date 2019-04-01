@@ -12,7 +12,8 @@
 
 - name: reboot machine  
   win_reboot:
-    reboot_timeout: "600"
+    reboot_timeout: "1200"
 
 - name: list domain list after reboot
-  dclist: "{{ ad_domain_name }}"
+  win_shell: echo "{{ ad_domain_name }}"
+  register: output
